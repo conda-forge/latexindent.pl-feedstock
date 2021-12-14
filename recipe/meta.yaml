@@ -15,6 +15,7 @@ build:
   script:
     - cp {{ name }} $PREFIX/bin/
     - cp -r LatexIndent $PREFIX/bin/
+    - cp defaultSettings.yaml $PREFIX/bin/LatexIndent/
 
 requirements:
   build:
