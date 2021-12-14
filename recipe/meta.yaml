@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/cmhughes/{{ name }}/archive/V{{ version }}.tar.gz
   sha256: cc6df51754f2bed022eaaecb00576162c9a1127c6ca7beb67218ac9278aff132
+  patches:
+    - deps.patch  # [build_platform != target_platform]
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   script:
     - cp {{ name }} $PREFIX/bin/
@@ -25,7 +27,7 @@ requirements:
   run:
     - perl
     - perl-file-homedir
-    - perl-unicode-linebreak
+    - perl-unicode-linebreak  # [build_platform == target_platform]
     - perl-yaml-tiny
 
 test:
