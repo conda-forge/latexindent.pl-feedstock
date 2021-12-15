@@ -13,7 +13,7 @@ source:
 
 build:
   number: 1
-  noarch: generic
+  # noarch: generic
   script:
     - cp {{ name }} $PREFIX/bin/
     - cp -r LatexIndent $PREFIX/bin/
