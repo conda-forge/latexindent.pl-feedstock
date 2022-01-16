@@ -10,11 +10,12 @@ source:
   sha256: 59ad9808a140cb9b6a39b20dae0ce690ce8292491030f2a81a4c36060b49c667
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   script:
     - cp {{ name }} $PREFIX/bin/
     - cp -r LatexIndent $PREFIX/bin/
+    - cp defaultSettings.yaml $PREFIX/bin/LatexIndent/
 
 requirements:
   build:
