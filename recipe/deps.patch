@@ -188,38 +188,6 @@ index 692bfdd..6138733 100644
          $logger->info("*Perl modules are being loaded from the following directories:");
          foreach my $moduleName (@listOfModules) {
                  (my $file = $moduleName) =~ s|::|/|g;
-diff --git a/LatexIndent/Logger.pm b/LatexIndent/Logger.pm
-index d3f9d0f..ebad76a 100644
---- a/LatexIndent/Logger.pm
-+++ b/LatexIndent/Logger.pm
-@@ -26,6 +26,7 @@ our @logFileLines;
- sub info{
-     my $self = shift;
-     my $logfileline = shift;
-+    return unless (defined $logfileline); 
-     if ($logfileline =~ m/^\*/s){
-         $logfileline =~ s/^\*/INFO:  /s;
-         $logfileline =~ s/^/        /mg;
-diff --git a/LatexIndent/ModifyLineBreaks.pm b/LatexIndent/ModifyLineBreaks.pm
-index 63f6c2d..0220271 100644
---- a/LatexIndent/ModifyLineBreaks.pm
-+++ b/LatexIndent/ModifyLineBreaks.pm
-@@ -246,7 +246,6 @@ sub verbatim_modify_line_breaks{
-     # verbatim modify line breaks are a bit special, as they happen before 
-     # any of the main processes have been done
-     my $self = shift;
--    my %input = @_;
-     while ( my ($key,$child)= each %verbatimStorage){
-       if(defined ${$child}{BeginStartsOnOwnLine}){
-         my $BeginStringLogFile = ${$child}{aliases}{BeginStartsOnOwnLine};
-@@ -294,7 +293,6 @@ sub verbatim_modify_line_breaks{
-           } elsif(${$child}{EndFinishesWithLineBreak}==3){
-             $lineBreakCharacter .= (${$mainSettings{modifyLineBreaks}}{preserveBlankLines}?$tokens{blanklines}:"\n")."\n";       
-           }
--          ${$self}{body} =~s/${$child}{id}(\h*)/${$child}{id}$1$trailingCommentToken$lineBreakCharacter/s;
-         }
-       }
-     }
 diff --git a/documentation/sec-appendices.tex b/documentation/sec-appendices.tex
 index 64f4918..cada2dd 100644
 --- a/documentation/sec-appendices.tex
