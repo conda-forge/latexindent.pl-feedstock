@@ -33,8 +33,6 @@ requirements:
 test:
   commands:
     - {{ name }} --version
-  imports:
-    - LatexIndent::Version
 
 about:
   home: https://github.com/cmhughes/{{ name }}
