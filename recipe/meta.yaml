@@ -1,5 +1,5 @@
 {% set name = "latexindent.pl" %}
-{% set version = "3.19" %}
+{% set version = "3.19.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cmhughes/{{ name }}/archive/V{{ version }}.tar.gz
-  sha256: 0061b967cfdadfb9ddafbbcf61b054f5a5970c4434658f3efae2a244f7196709
+  sha256: 1ec2b1b83d3dcde3bf654933ebbe9de38ba7793f2f52564450cae71c9cab913e
 
 build:
   number: 0
