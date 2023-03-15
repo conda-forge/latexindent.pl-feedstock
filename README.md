@@ -1,11 +1,11 @@
-About latexindent.pl
-====================
+About latexindent.pl-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/latexindent.pl-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/cmhughes/latexindent.pl
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/latexindent.pl-feedstock/blob/main/LICENSE.txt)
 
 Summary: Script to indent LaTeX code
 
